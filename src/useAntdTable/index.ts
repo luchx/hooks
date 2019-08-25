@@ -8,7 +8,7 @@ interface UseTableFormUtils extends WrappedFormUtils {
 }
 
 export interface ReturnValue<T> {
-  table: {
+  tableProps: {
     dataSource: T;
     loading: boolean;
     onChange: (e: PaginationConfig) => void;
@@ -265,7 +265,7 @@ export default function useAntdTable<T>(
   };
 
   const result: ReturnValue<T> = {
-    table: {
+    tableProps: {
       dataSource: state.data as T,
       loading: state.loading,
       onChange: changeTable,

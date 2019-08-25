@@ -17,7 +17,7 @@ const AppList = props => {
   const { getFieldDecorator } = props.form;
 
   const {
-    table,
+    tableProps,
     search: { type, changeType, submit },
   } = useAntdTable(getTableData, [], {
     defaultPageSize: 5,
@@ -112,11 +112,11 @@ const AppList = props => {
       {type === 'simple' ? searchFrom : advanceSearchForm}
       <Table
         columns={columns}
-        {...table}
+        {...tableProps}
         pagination={{
           showSizeChanger: true,
           showQuickJumper: true,
-          ...table.pagination,
+          ...tableProps.pagination,
         }}
       />
     </div>
